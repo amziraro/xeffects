@@ -12,9 +12,11 @@ public:
 	CScreenQuad()
 	{
 		Material.Wireframe = false;
-		Material.Lighting = false;
-		Material.ZWriteEnable = false;
-
+		//Material.Lighting = false;
+		//Material.ZWriteEnable = false;
+		Material.setFlag(irr::video::EMF_LIGHTING, false);
+		Material.ZWriteEnable = irr::video::EZW_OFF;
+		
 		Vertices[0] = irr::video::S3DVertex(-1.0f,-1.0f,0.0f,0,0,1,irr::video::SColor(0x0),0.0f,1.0f);
 		Vertices[1] = irr::video::S3DVertex(-1.0f, 1.0f,0.0f,0,0,1,irr::video::SColor(0x0),0.0f,0.0f);
 		Vertices[2] = irr::video::S3DVertex( 1.0f, 1.0f,0.0f,0,0,1,irr::video::SColor(0x0),1.0f,0.0f);
